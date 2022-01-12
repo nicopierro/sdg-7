@@ -3,9 +3,14 @@
 # and commit this file to your remote git repository to share the goodness with others.
 
 tasks:
-  - init: npm i -g @angular/cli@12 && pip install -r requirements.txt
+  - name: dev-server
+    init:  pip install -r requirements.txt
     command: python main.py
-  - command: cd dev-client && npm i && ng serve
+    openMode: tab-after
+  - name: dev-client
+    init: npm i -g @angular/cli@12
+    command: cd dev-client && npm i && ng serve
+    openMode: tab-after
 
 ports:
   - port: 5000
