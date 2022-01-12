@@ -1,0 +1,11 @@
+<div class="container" *ngFor="let chart of chartDataArray">
+  <google-chart
+    [title]="chart.title"
+    [type]="chart.type"
+    [data]="chart.data"
+    [columns]="chart.columns"
+    [options]="chart.options"
+  >
+  </google-chart>
+ 
+</div>
