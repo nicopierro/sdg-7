@@ -6,6 +6,14 @@ tasks:
   - init: npm i -g @angular/cli@12 && pip install -r requirements.txt
     command: python main.py
   - command: cd dev-client && npm i && ng serve
+
+ports:
+  - port: 5000
+    onOpen: open-browser
+    visibility: public
+  - port: 4200
+    onOpen: open-browser
+    
 vscode:
   extensions:
     - dbaeumer.vscode-eslint
