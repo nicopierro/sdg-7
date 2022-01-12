@@ -59,7 +59,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.obsElectricityAccess = this.http.get<ElectricityAccess[]>(
-      `https://5000-cyan-anaconda-gvfsoxdm.ws-eu25.gitpod.io/linee`
+      `https://5000-rose-fish-47ehiuuc.ws-eu25.gitpod.io/linee`
     );
     this.obsElectricityAccess.subscribe(this.prepareElectricityAccessData);
   }
