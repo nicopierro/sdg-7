@@ -1,13 +1,4 @@
 import { Component } from '@angular/core';
-import {
-  ChartErrorEvent,
-  ChartMouseLeaveEvent,
-  ChartMouseOverEvent,
-  ChartSelectionChangedEvent,
-  ChartType,
-  Column,
-  GoogleChartComponent
-} from 'angular-google-charts';
 
 @Component({
   selector: 'app-root',
@@ -17,4 +8,3 @@ import {
 export class AppComponent {
   title = 'grafici';
 }
-

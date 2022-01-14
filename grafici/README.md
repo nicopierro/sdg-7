@@ -1,6 +1,6 @@
 # Grafici
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.15.
 
 ## Development server
 
