@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ElectricityAccessChartComponent } from './electricity-access-chart/electricity-access-chart.component';
 import { ElectricityAccessComponent } from './electricity-access/electricity-access.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +15,8 @@ import { ElectricityAccessComponent } from './electricity-access/electricity-acc
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GoogleChartsModule
+    GoogleChartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
