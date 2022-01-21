@@ -1,2 +1,4 @@
-<google-chart>
-</google-chart>
+<div *ngFor="let graph of chartDataArray">
+    <google-chart [title]="graph.title" [type]="graph.type" [data]="graph.data">
+    </google-chart>
+  </div>

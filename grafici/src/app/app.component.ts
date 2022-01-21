@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ElectricityAccessChartComponent } from './electricity-access-chart/electricity-access-chart.component';
+import { ElectricityAccess } from './models/electricity-access.model';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'grafici';
-}
+  chartDataArray = new Array<ElectricityAccessChartComponent>();
 
+
+}
