@@ -9,16 +9,35 @@ app.config["MONGO_URI"] = "mongodb+srv://sloth:mSCW5mKaiJOuABCG@cluster0.nljzd.m
 CORS(app)
 mongo = PyMongo(app)
 
+
 @app.route("/")
 # Generic Python functino that returns "Hello world!"
 def index():
     return "Hello world!"
 
+
 @app.route("/linee", methods=['GET'])
 def linee():
     ea = mongo.db.ElectricityAccess
-    list_cur = list(ea.find({},{"_id":0}))
+    query = [{
+        "$group": {
+            "_id": "$Entity",
+            "Entity": {"$last": "$Entity"},
+            "Access to electricity (% of population)": {"$last": "$Access to electricity (% of population)"},
+            "Year": {"$last": "$Year"}
+        }},
+        
+        {
+        "$project": {
+            "_id": 0,
+            "Entity": 1,
+            "Access to electricity (% of population)": 1,
+            "Year": 1
+        }
+    }]
+    list_cur = list(ea.aggregate(query))
     return dumps(list_cur)
+
 
 # Checks to see if the name of the package is the run as the main package.
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ElectricityAccessChartComponent } from './electricity-access-chart/electricity-access-chart.component';
 import { ElectricityAccess } from './models/electricity-access.model';
+import { Charts } from './models/chart-data.model';
 
 @Component({
   selector: 'app-root',
