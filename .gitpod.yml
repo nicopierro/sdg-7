@@ -4,7 +4,7 @@
 
 tasks:
   - name: dev-server
-    init:  pip install -r requiregments.txt
+    init:  pip install -r requirements.txt
     command: python main.py
     openMode: tab-after
   - name: dev-client
