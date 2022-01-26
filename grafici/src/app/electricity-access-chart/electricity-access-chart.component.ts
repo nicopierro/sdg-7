@@ -28,8 +28,8 @@ export class ElectricityAccessChartComponent implements OnInit {
   chartOptions: {};
   constructor(public http: HttpClient) {
     this.chartOptions = {
-      width: 1600,
-      height: 1500,
+      width: 720,
+      height: 480,
       colorAxis: {
         colors: [
           'white','red','orange','yellow','lightgreen','darkgreen']
@@ -58,7 +58,7 @@ export class ElectricityAccessChartComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-knmn7hervaf.ws-eu28.gitpod.io/linee`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-sin8l4cuqom.ws-eu29.gitpod.io/linee`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }

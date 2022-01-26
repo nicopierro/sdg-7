@@ -15,9 +15,14 @@ mongo = PyMongo(app)
 def index():
     return "Hello world!"
 
+@app.route("/AccessToElectricity2010vs2019", methods=['GET'])
+def accessToElectricity2010vs2019():
+    ate20102019 = mongo.db.AccessToElectricity2010vs2019
+    list_cur = list(ate20102019.find({},{"_id":0}))
+    return dumps(list_cur)
 
-@app.route("/linee", methods=['GET'])
-def linee():
+@app.route("/ElectricityAccess", methods=['GET'])
+def electrictyAccess():
     ea = mongo.db.ElectricityAccess
     query = [{
         "$group": {

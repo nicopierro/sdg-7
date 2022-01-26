@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { ElectricityAccessChartComponent } from './electricity-access-chart/electricity-access-chart.component';
 import { ElectricityAccessComponent } from './electricity-access/electricity-access.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EaDifferenceComponent } from './ea-difference/ea-difference.component';
+import { EaDifferenceChartComponent } from './ea-difference-chart/ea-difference-chart.component';
 @NgModule({
   declarations: [
     AppComponent,
     ElectricityAccessChartComponent,
-    ElectricityAccessComponent
+    ElectricityAccessComponent,
+    EaDifferenceComponent,
+    EaDifferenceChartComponent
   ],
   imports: [
     BrowserModule,
