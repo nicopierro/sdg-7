@@ -28,8 +28,17 @@ export class EaDifferenceChartComponent implements OnInit {
   chartOptions: {};
   constructor(public http: HttpClient) {
     this.chartOptions = {
-      width: 720,
-      height: 480,
+      width: 1280,
+      height: 720,
+      hAxis: {
+        title: '% of population',
+      },
+      vAxis: {
+        title: 'Regions'
+      },
+      legend: {
+        position: 'right', textStyle: {fontSize: 16}
+      }
     }
   }
 
@@ -44,12 +53,12 @@ export class EaDifferenceChartComponent implements OnInit {
       ]);
     }
     this.chartDataArray = [];
-    this.chartDataArray.push(new Charts('AccessToElectricity2010vs2019', 'BarChart', this.chartData, ['Region', '2010', '2019'], this.chartOptions));
+    this.chartDataArray.push(new Charts('Access to Electricity: 2010 vs 2019', 'BarChart', this.chartData, ['Region', '2010', '2019'], this.chartOptions));
     console.log(this.chartDataArray)
   }
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<AccessToElectricity2010vs2019[]>(`https://5000-nicopierro-sdg7-sin8l4cuqom.ws-eu29.gitpod.io/AccessToElectricity2010vs2019`);
+    this.obsVett = this.http.get<AccessToElectricity2010vs2019[]>(`https://5000-nicopierro-sdg7-au9cedcuziv.ws-eu29.gitpod.io/AccessToElectricity2010vs2019`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }
