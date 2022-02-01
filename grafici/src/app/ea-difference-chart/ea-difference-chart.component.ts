@@ -58,7 +58,7 @@ export class EaDifferenceChartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<AccessToElectricity2010vs2019[]>(`https://4200-nicopierro-sdg7-l4k3z0p0a9p.ws-eu29.gitpod.io/AccessToElectricity2010vs2019`);
+    this.obsVett = this.http.get<AccessToElectricity2010vs2019[]>(`https://5000-nicopierro-sdg7-l4k3z0p0a9p.ws-eu29.gitpod.io/AccessToElectricity2010vs2019`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }

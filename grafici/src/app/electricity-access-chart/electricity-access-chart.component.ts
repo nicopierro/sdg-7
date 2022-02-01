@@ -58,7 +58,7 @@ export class ElectricityAccessChartComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://4200-nicopierro-sdg7-l4k3z0p0a9p.ws-eu29.gitpod.io/ElectricityAccess`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-l4k3z0p0a9p.ws-eu29.gitpod.io/ElectricityAccess`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }
