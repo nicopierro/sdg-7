@@ -28,9 +28,10 @@ export class ElectricityAccessChartComponent implements OnInit {
   chartOptions: {};
   constructor(public http: HttpClient) {
     this.chartOptions = {
-      width: 720,
-      height: 480,
+      width: 1280,
+      height: 720,
       colorAxis: {
+        minValue: 0,
         colors: [
           'white','red','orange','yellow','lightgreen','darkgreen']
       }
