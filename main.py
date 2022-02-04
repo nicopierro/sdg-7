@@ -21,17 +21,19 @@ def accessToElectricity2010vs2019():
     list_cur = list(ate20102019.find({},{"_id":0}))
     return dumps(list_cur)
 
-@app.route("/ElectricityAccess", methods=['GET'])
-def electrictyAccess():
+@app.route("/ElectricityAccess/<int:anno>", methods=['GET'])
+def electrictyAccess(anno):
     ea = mongo.db.ElectricityAccess
     query = [{
+        "$match" : {"Year": {"$lte": anno}}},
+        {
         "$group": {
             "_id": "$Entity",
             "Entity": {"$last": "$Entity"},
             "Access to electricity (% of population)": {"$last": "$Access to electricity (% of population)"},
-            "Year": {"$last": "$Year"}
+            "Years": {"$push": "$Year"}
         }},
-        
+
         {
         "$project": {
             "_id": 0,

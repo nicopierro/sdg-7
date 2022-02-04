@@ -8,13 +8,15 @@ import { ElectricityAccessComponent } from './electricity-access/electricity-acc
 import { HttpClientModule } from '@angular/common/http';
 import { EaDifferenceComponent } from './ea-difference/ea-difference.component';
 import { EaDifferenceChartComponent } from './ea-difference-chart/ea-difference-chart.component';
+import { GenericComponent } from './generic/generic.component';
 @NgModule({
   declarations: [
     AppComponent,
     ElectricityAccessChartComponent,
     ElectricityAccessComponent,
     EaDifferenceComponent,
-    EaDifferenceChartComponent
+    EaDifferenceChartComponent,
+    GenericComponent
   ],
   imports: [
     BrowserModule,
