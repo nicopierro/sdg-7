@@ -1,6 +1,10 @@
 export class ElectricityAccess {
-    Entity: string;
-    Code: string;
-    Year: number;
-    ElectricityAccess: number;
+    _id: string;
+    years: Array<data>;
 }
+
+export class data {
+    electricity: number;
+    year: number;
+}
+

@@ -39,16 +39,15 @@ export class ElectricityAccessChartComponent implements OnInit {
   }
 
   prepareVectData = (data: ElectricityAccess[]) => {
-    console.log(data);
 
     for (var i in data) {
       this.chartData.push([
-        data[i]['Entity'],
-        data[i]['Access to electricity (% of population)'],
+        data[i]['_id'],
+        data[i]['years'][0]['electricity'],
       ]);
     }
     this.chartDataArray = [];
-    this.chartDataArray.push(new Charts('Access to electricity (% of population)', 'GeoChart', this.chartData, ['Entity', 'Access to electricity (% of population)'], this.chartOptions));
+    this.chartDataArray.push(new Charts('Access to electricity (% of population)', 'GeoChart', this.chartData, ['Entity', 'years.Electricity'], this.chartOptions));
     console.log(this.chartDataArray)
   }
 
@@ -59,7 +58,7 @@ export class ElectricityAccessChartComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-akq041ydmbt.ws-eu30.gitpod.io/ElectricityAccess`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-ilr2f20oji0.ws-eu30.gitpod.io/ElectricityAccess/2019`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }
