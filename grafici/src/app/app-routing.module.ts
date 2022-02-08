@@ -5,7 +5,7 @@ import { ElectricityAccessComponent } from './electricity-access/electricity-acc
 import { GenericComponent } from './generic/generic.component';
 
 const routes: Routes = [
-  { path: 'ElectricityAccess/2019', component: ElectricityAccessComponent},
+  { path: `ElectricityAccess/:anno`, component: ElectricityAccessComponent},
   { path: 'AccessToElectricity2010vs2019', component: EaDifferenceComponent},
   { path: 'generic/:id', component: GenericComponent }
 ];
