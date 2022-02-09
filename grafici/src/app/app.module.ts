@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EaDifferenceComponent } from './ea-difference/ea-difference.component';
 import { EaDifferenceChartComponent } from './ea-difference-chart/ea-difference-chart.component';
 import { GenericComponent } from './generic/generic.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { GenericComponent } from './generic/generic.component';
     BrowserModule,
     AppRoutingModule,
     GoogleChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

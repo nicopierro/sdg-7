@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { ElectricityAccessComponent } from '../electricity-access/electricity-access.component';
 import { ElectricityAccess } from '/workspace/sdg-7/grafici/src/app/models/electricity-access.model';
 import { Charts } from '../models/chart-data.model';
-
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Options } from '@angular-slider/ngx-slider';
 import {
   ChartErrorEvent,
   ChartMouseLeaveEvent,
@@ -14,6 +15,7 @@ import {
   Column,
   GoogleChartComponent
 } from 'angular-google-charts';
+
 
 
 @Component({
@@ -26,7 +28,18 @@ export class ElectricityAccessChartComponent implements OnInit {
   chartData = [];
   chartDataArray: Charts[];
   chartOptions: {};
-  constructor(public http: HttpClient) {
+  uri_param = 2019;
+
+  value: number = 2019;
+  sliderOptions: Options = {
+    floor: 0,
+    vertical: true,
+    ceil: 2019
+  }
+  
+  constructor(public http: HttpClient, private route: ActivatedRoute) {
+    this.route.paramMap.subscribe(this.getRouterParam);
+
     this.chartOptions = {
       width: 1280,
       height: 720,
@@ -47,7 +60,7 @@ export class ElectricityAccessChartComponent implements OnInit {
       ]);
     }
     this.chartDataArray = [];
-    this.chartDataArray.push(new Charts('Access to electricity (% of population)', 'GeoChart', this.chartData, ['Entity', 'years.Electricity'], this.chartOptions));
+    this.chartDataArray.push(new Charts('Access to electricity (% of population)', 'GeoChart', this.chartData, ['Entity', 'Electricity'], this.chartOptions));
     console.log(this.chartDataArray)
   }
 
@@ -57,9 +70,18 @@ export class ElectricityAccessChartComponent implements OnInit {
 
   };
 
+
+  getRouterParam = (params: ParamMap) =>
+  {
+    this.uri_param = parseInt(params.get('anno')); 
+    
+  }
+  
+
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-ilr2f20oji0.ws-eu30.gitpod.io/ElectricityAccess/2019`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-lp6txvgyj4q.ws-eu30.gitpod.io/ElectricityAccess/${this.uri_param}`);
     this.obsVett.subscribe(this.prepareVectData);
+
 
   }
 }
