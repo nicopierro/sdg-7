@@ -15,23 +15,35 @@ mongo = PyMongo(app)
 def index():
     return "Hello world!"
 
+
 @app.route("/AccessToElectricity2010vs2019", methods=['GET'])
 def accessToElectricity2010vs2019():
     ate20102019 = mongo.db.AccessToElectricity2010vs2019
-    result = list(ate20102019.find({},{"_id":0}))
-    return dumps(result)
+    result = list(ate20102019.find({}, {"_id": 0}))
+    return jsonify(result)
+
 
 @app.route("/ElectricityAccess/<int:anno>", methods=['GET'])
 def electrictyAccess(anno):
     ea = mongo.db.ElectricityAccess
     query = [{
-        "$match" : {"Year": anno}},
+        "$match": {"Year": anno}},
         {
         "$group": {
             "_id": "$Entity",
             "years": {"$push": {'year': "$Year", 'electricity': '$Electricity'}}
         }}]
     result = list(ea.aggregate(query))
+    return jsonify(result)
+
+
+@app.route("/SharedElectricitySource", methods=['GET'])
+def SharedElectricitySource():
+    ses = mongo.db.SharedElectricitySource
+    query = {
+        'Entity': 'World'
+    }
+    result = list(ses.find(query, {"_id": 0}))
     return jsonify(result)
 
 
