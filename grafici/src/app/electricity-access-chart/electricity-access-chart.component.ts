@@ -32,9 +32,10 @@ export class ElectricityAccessChartComponent implements OnInit {
 
   value: number = 2019;
   sliderOptions: Options = {
-    floor: 0,
-    vertical: true,
-    ceil: 2019
+    floor: 1970,
+    ceil: 2020,
+    step: 10,
+    showTicks: true
   }
   
   constructor(public http: HttpClient, private route: ActivatedRoute) {
@@ -79,9 +80,8 @@ export class ElectricityAccessChartComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-lp6txvgyj4q.ws-eu30.gitpod.io/ElectricityAccess/${this.uri_param}`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-vi2idnwsm42.ws-eu31.gitpod.io/ElectricityAccess/${this.uri_param}`);
     this.obsVett.subscribe(this.prepareVectData);
-
 
   }
 }
