@@ -65,13 +65,6 @@ export class ElectricityAccessChartComponent implements OnInit {
     console.log(this.chartDataArray)
   }
 
-  prepareElectricityAccessData = (data: ElectricityAccess[]) => {
-    console.log(data);
-
-
-  };
-
-
   getRouterParam = (params: ParamMap) =>
   {
     this.uri_param = parseInt(params.get('anno')); 
@@ -80,7 +73,7 @@ export class ElectricityAccessChartComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-ttcdf662zxs.ws-eu31.gitpod.io/ElectricityAccess/${this.uri_param}`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-oy3sdqwfs9c.ws-eu34.gitpod.io/ElectricityAccess/${this.uri_param}`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }

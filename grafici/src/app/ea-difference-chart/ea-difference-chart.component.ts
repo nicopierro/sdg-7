@@ -34,7 +34,7 @@ export class EaDifferenceChartComponent implements OnInit {
         title: '% of population',
       },
       vAxis: {
-        title: 'Regions'
+        title: 'Region'
       },
       legend: {
         position: 'right', textStyle: {fontSize: 16}
@@ -58,7 +58,7 @@ export class EaDifferenceChartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<AccessToElectricity2010vs2019[]>(`https://5000-nicopierro-sdg7-ttcdf662zxs.ws-eu31.gitpod.io/AccessToElectricity2010vs2019`);
+    this.obsVett = this.http.get<AccessToElectricity2010vs2019[]>(`https://5000-nicopierro-sdg7-oy3sdqwfs9c.ws-eu34.gitpod.io/AccessToElectricity2010vs2019`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }

@@ -21,10 +21,10 @@ export class ElectricitySourceChartComponent implements OnInit {
       width: 1280,
       height: 720,
       hAxis: {
-        title: '% of population',
+        title: 'Year',
       },
       vAxis: {
-        title: 'Regions'
+        title: 'TWh'
       },
       legend: {
         position: 'right', textStyle: {fontSize: 16}
@@ -49,12 +49,13 @@ export class ElectricitySourceChartComponent implements OnInit {
       ]);
     }
     this.chartDataArray = [];
-    this.chartDataArray.push(new Charts('Share of electricity production by source, World', 'LineChart', this.chartData, ['Year', 'Coal', 'Gas', 'Hydro', 'Solar', 'Wind', 'Oil', 'Nuclear', 'Other_renewables'], this.chartOptions));
+    this.chartDataArray.push(new Charts('Electricity production by source, World', 'LineChart', this.chartData, 
+    ['Year', 'Coal', 'Gas', 'Hydro', 'Solar', 'Wind', 'Oil', 'Nuclear', 'Other_renewables'], this.chartOptions));
     console.log(this.chartDataArray)
   }
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricitySource[]>(`https://5000-nicopierro-sdg7-ttcdf662zxs.ws-eu31.gitpod.io/SharedElectricitySource`);
+    this.obsVett = this.http.get<ElectricitySource[]>(`https://5000-nicopierro-sdg7-oy3sdqwfs9c.ws-eu34.gitpod.io/SharedElectricitySource`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }

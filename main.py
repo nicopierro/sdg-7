@@ -43,7 +43,7 @@ def SharedElectricitySource():
     query = {
         'Entity': 'World'
     }
-    result = list(ses.find(query, {"_id": 0}))
+    result = list(ses.find(query, {"_id": 0}).sort('Year'))
     return jsonify(result)
 
 
