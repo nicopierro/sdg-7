@@ -27,11 +27,11 @@ def accessToElectricity2010vs2019():
 def electrictyAccess(anno):
     ea = mongo.db.ElectricityAccess
     query = [{
-        "$match": {"Year": anno}},
+        "$match": {"Year": { "$lte" : anno}}},
         {
         "$group": {
             "_id": "$Entity",
-            "years": {"$push": {'year': "$Year", 'electricity': '$Electricity'}}
+            "years": {"$push": {'year': "$Year", 'electricity': '$Electricity'}},
         }}]
     result = list(ea.aggregate(query))
     return jsonify(result)
