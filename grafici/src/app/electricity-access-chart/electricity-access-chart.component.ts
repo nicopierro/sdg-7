@@ -30,11 +30,10 @@ export class ElectricityAccessChartComponent implements OnInit {
   chartOptions: {};
   uri_param = 2019;
   tempArray = [];
-  value: number = 1970;
+  value: number = 1990;
   sliderOptions: Options = {
-    floor: 1970,
+    floor: 1990,
     ceil: 2020,
-    step: 5,
     showTicks: true
   }
   
@@ -44,6 +43,7 @@ export class ElectricityAccessChartComponent implements OnInit {
     this.chartOptions = {
       width: 1280,
       height: 720,
+      legend: 'top',
       colorAxis: {
         minValue: 0,
         colors: [
@@ -75,12 +75,12 @@ export class ElectricityAccessChartComponent implements OnInit {
   
   cambioAnno() {
     console.log(typeof(this.value.toString()))
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-kpaog011mho.ws-eu34.gitpod.io/ElectricityAccess/${this.value}`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-wnk4uriufik.ws-eu34.gitpod.io/ElectricityAccess/${this.value}`);
     this.obsVett.subscribe(this.prepareVectData);
   }
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-kpaog011mho.ws-eu34.gitpod.io/ElectricityAccess/${this.uri_param}`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-wnk4uriufik.ws-eu34.gitpod.io/ElectricityAccess/${this.uri_param}`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }
