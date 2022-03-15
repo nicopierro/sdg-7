@@ -43,7 +43,7 @@ export class ElectricityAccessChartComponent implements OnInit {
     this.chartOptions = {
       width: 1280,
       height: 720,
-      legend: 'top',
+      legend: false,
       colorAxis: {
         minValue: 0,
         colors: [
@@ -75,12 +75,12 @@ export class ElectricityAccessChartComponent implements OnInit {
   
   cambioAnno() {
     console.log(typeof(this.value.toString()))
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-wnk4uriufik.ws-eu34.gitpod.io/ElectricityAccess/${this.value}`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-j0ktn4f3bo4.ws-eu34.gitpod.io/ElectricityAccess/${this.value}`);
     this.obsVett.subscribe(this.prepareVectData);
   }
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-wnk4uriufik.ws-eu34.gitpod.io/ElectricityAccess/${this.uri_param}`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-j0ktn4f3bo4.ws-eu34.gitpod.io/ElectricityAccess/${this.uri_param}`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }
