@@ -1,6 +1,19 @@
-<p>Grafici Procionici</p>
-<button routerLink="/ElectricityAccess/2019">Electricity Access</button>
-<button routerLink="/AccessToElectricity2010vs2019">Differences</button>
-<button routerLink="/SharedElectricitySource">Electricity Source</button>
-<router-outlet></router-outlet>
+
+<div class="container-fluid">
+    <nav class="navbar navbar-dark bg-dark text-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="assets/images/Sustainable_Development_Goal_7.png" alt="" width="30" height="30" class="d-inline-block">
+            SDG 7
+          </a>
+            <li><a class="text-light" [routerLink]="['/ElectricityAccess/2019']">Electricity Access</a></li>
+            <li><a class="text-light"[routerLink]="['/AccessToElectricity2010vs2019']">Differences 2010 vs 2019</a></li>
+            <li><a class="text-light" [routerLink]="['/SharedElectricitySource']">Electricity Sources</a></li>
+        </div>
+      </nav>
+
+    <router-outlet></router-outlet>
+</div>
+
+
 
