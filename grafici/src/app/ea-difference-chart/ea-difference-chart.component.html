@@ -1,4 +1,21 @@
-<div *ngFor="let graph of chartDataArray">
-    <google-chart [title]="graph.title" [columns]="graph.columns" [type]="graph.type" [data]="graph.data" [options]="graph.options">
-    </google-chart>
+<div class=" container-md bg-dark text-white">
+    <p class="text-white">
+        The pandemic is threatening the progress that has been made in reducing greenhouse gas emissions and providing
+        electricity to millions of people. As a result, lower oil and gas prices are threatening to deter investors from
+        acquiring clean energy technologies.
+
+        In 2019, the global electricity access rate reached 90 per cent, which is a significant improvement from 2010,
+        when it was only 83 per cent. However, there will still be over 660 million people without electricity in 2030.
+
+        The COVID-19 pandemic is threatening the progress made in many countries in providing basic electricity
+        services. In 2020, the number of people without access to electricity in Africa increased by almost half. This
+        is due to the increasing levels of poverty and population growth in developing nations.
+
+    </p>
+    <div *ngFor="let graph of chartDataArray">
+        <google-chart [title]="graph.title" [columns]="graph.columns" [type]="graph.type" [data]="graph.data"
+            [options]="graph.options">
+        </google-chart>
+    </div>
+
 </div>

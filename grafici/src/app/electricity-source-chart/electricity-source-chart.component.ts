@@ -20,6 +20,7 @@ export class ElectricitySourceChartComponent implements OnInit {
     this.chartOptions = {
       width: 1280,
       height: 720,
+      backgroundColor: 'transparent',
       hAxis: {
         title: 'Year',
       },
@@ -55,7 +56,7 @@ export class ElectricitySourceChartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricitySource[]>(`https://5000-nicopierro-sdg7-j0ktn4f3bo4.ws-eu34.gitpod.io/SharedElectricitySource`);
+    this.obsVett = this.http.get<ElectricitySource[]>(`https://5000-nicopierro-sdg7-whawyhtblhx.ws-eu34.gitpod.io/SharedElectricitySource`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }

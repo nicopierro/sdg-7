@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Charts } from '../models/chart-data.model';
-
 import {
   ChartErrorEvent,
   ChartMouseLeaveEvent,
@@ -30,11 +29,15 @@ export class EaDifferenceChartComponent implements OnInit {
     this.chartOptions = {
       width: 1280,
       height: 720,
+      backgroundColor: 'transparent',
+      
       hAxis: {
         title: '% of population',
+        
       },
       vAxis: {
         title: 'Region'
+        
       },
       legend: {
         position: 'right', textStyle: {fontSize: 16}
@@ -58,7 +61,7 @@ export class EaDifferenceChartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<AccessToElectricity2010vs2019[]>(`https://5000-nicopierro-sdg7-j0ktn4f3bo4.ws-eu34.gitpod.io/AccessToElectricity2010vs2019`);
+    this.obsVett = this.http.get<AccessToElectricity2010vs2019[]>(`https://5000-nicopierro-sdg7-whawyhtblhx.ws-eu34.gitpod.io/AccessToElectricity2010vs2019`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }

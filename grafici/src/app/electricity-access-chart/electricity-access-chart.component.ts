@@ -23,12 +23,13 @@ import {
   templateUrl: './electricity-access-chart.component.html',
   styleUrls: ['./electricity-access-chart.component.css']
 })
+
 export class ElectricityAccessChartComponent implements OnInit {
   obsVett: Observable<ElectricityAccess[]>;
   chartData = [];
   chartDataArray: Charts[];
   chartOptions: {};
-  uri_param = 2019;
+  uri_param = 1990;
   tempArray = [];
   value: number = 1990;
   sliderOptions: Options = {
@@ -44,6 +45,7 @@ export class ElectricityAccessChartComponent implements OnInit {
       width: 1280,
       height: 720,
       legend: false,
+      backgroundColor: 'transparent',
       colorAxis: {
         minValue: 0,
         colors: [
@@ -75,12 +77,12 @@ export class ElectricityAccessChartComponent implements OnInit {
   
   cambioAnno() {
     console.log(typeof(this.value.toString()))
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-j0ktn4f3bo4.ws-eu34.gitpod.io/ElectricityAccess/${this.value}`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-whawyhtblhx.ws-eu34.gitpod.io/ElectricityAccess/${this.value}`);
     this.obsVett.subscribe(this.prepareVectData);
   }
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-j0ktn4f3bo4.ws-eu34.gitpod.io/ElectricityAccess/${this.uri_param}`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-whawyhtblhx.ws-eu34.gitpod.io/ElectricityAccess/${this.uri_param}`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }
