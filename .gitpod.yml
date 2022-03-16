@@ -9,7 +9,7 @@ tasks:
     openMode: tab-after
   - name: dev-client
     init: npm i -g @angular/cli@12
-    command: cd grafici && npm i && ng serve
+    command: cd grafici && npm i && ng serve --disable-host-check
     openMode: tab-after
 
 ports:
@@ -18,9 +18,9 @@ ports:
     visibility: public
   - port: 4200
     onOpen: open-browser
+    visibility: public
     
 vscode:
   extensions:
     - dbaeumer.vscode-eslint
     - ms-python.python
-
