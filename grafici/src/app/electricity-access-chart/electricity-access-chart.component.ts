@@ -77,12 +77,12 @@ export class ElectricityAccessChartComponent implements OnInit {
   
   cambioAnno() {
     console.log(typeof(this.value.toString()))
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-whawyhtblhx.ws-eu34.gitpod.io/ElectricityAccess/${this.value}`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-zy3z1fnajt7.ws-eu38.gitpod.io/ElectricityAccess/${this.value}`);
     this.obsVett.subscribe(this.prepareVectData);
   }
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-whawyhtblhx.ws-eu34.gitpod.io/ElectricityAccess/${this.uri_param}`);
+    this.obsVett = this.http.get<ElectricityAccess[]>(`https://5000-nicopierro-sdg7-zy3z1fnajt7.ws-eu38.gitpod.io/ElectricityAccess/${this.uri_param}`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }

@@ -1,6 +1,6 @@
 <div class="container-md">
     <h1 class="text-center"> Share of the population with access to electricity. </h1>
-    <p> It is defined as having an electricity source that can provide very
+    <p class="text-center"> It is defined as having an electricity source that can provide very
         basic lighting, and charge a phone or power a radio for 4 hours per day.</p>
     <div *ngFor="let graph of chartDataArray">
         <google-chart class="align-middle" [title]="graph.title" [type]="graph.type" [data]="graph.data" [options]="graph.options">

@@ -1,5 +1,6 @@
 <div class="container-md">
-
+    <h1 class="text-center"> Where electricity comes from </h1>
+    <p class="text-center">Electricity can have different sources. It is important to know how well the world is doing when it comes to renewable energy. <br> It's not just about <i>having</i> access to electricity but also about having access to <i>clean</i> electricity</p>
     <div *ngFor="let graph of chartDataArray">
         <google-chart [title]="graph.title" [columns]="graph.columns" [type]="graph.type" [data]="graph.data"
             [options]="graph.options">

@@ -1,19 +1,50 @@
+<nav class="navbar navbar-dark bg-dark text-light nav-border navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      SDG 7
+    </a>
+    <button class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse"
+      data-target="#navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
+      aria-controls="navbarTogglerDemo02">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="text-light nav-link" [routerLink]="['/ElectricityAccess/2019']">Electricity
+            Access</a></li>
+        <li class="nav-item"><a class="text-light nav-link"
+            [routerLink]="['/AccessToElectricity2010vs2019']">Differences 2010 vs 2019</a>
+        </li>
+        <li class="nav-item"><a class="text-light nav-link" [routerLink]="['/SharedElectricitySource']">Electricity
+            Sources</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<div class="container-fluid">
-    <nav class="navbar navbar-dark bg-dark text-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="assets/images/Sustainable_Development_Goal_7.png" alt="" width="30" height="30" class="d-inline-block">
-            SDG 7
-          </a>
-            <li><a class="text-light" [routerLink]="['/ElectricityAccess/2019']">Electricity Access</a></li>
-            <li><a class="text-light"[routerLink]="['/AccessToElectricity2010vs2019']">Differences 2010 vs 2019</a></li>
-            <li><a class="text-light" [routerLink]="['/SharedElectricitySource']">Electricity Sources</a></li>
-        </div>
-      </nav>
+<router-outlet></router-outlet>
+<div>
+  <h1 class="text-center">Ensure access to affordable, reliable, sustainable and modern energy for all </h1>
+  <p> The UN explains: "Energy is central to nearly every major challenge and opportunity the world faces today. Be it for jobs, security, climate change, food production or increasing incomes, access to energy for all is essential.
+    Transitioning the global economy towards clean and sustainable sources of energy is one of our greatest challenges in the coming decades. Sustainable energy is an opportunity – it transforms lives, economies and the planet."</p>
+  <p> The world is making progress towards Goal 7, with encouraging signs that energy is becoming more sustainable and widely available. Access to electricity in poorer countries has begun to accelerate, energy efficiency continues to improve, and renewable energy is making impressive gains in the electricity sector. 
 
-    <router-outlet></router-outlet>
+    Nevertheless, more focused attention is needed to improve access to clean and safe cooking fuels and technologies for 3 billion people, to expand the use of renewable energy beyond the electricity sector, and to increase electrification in sub-Saharan Africa.
+    
+    The Energy Progress Report provides global dashboard to register progress on energy access, energy efficiency and renewable energy. It assesses the progress made by each country on these three pillars and provides a snapshot of how far we are from achieving the 2030 Sustainable Development Goals targets.
+    </p>
+  
+  <h4> COVID-19 Response</h4>
+  <p> Lack of access to energy may hamper efforts to contain COVID-19 across many parts of the world. Energy services are key to preventing disease and fighting pandemics – from powering healthcare facilities and supplying clean water for essential hygiene, to enabling communications and IT services that connect people while maintaining social distancing. 
+    
+    789 million people – predominantly in sub-Saharan Africa – are living without access to electricity, and hundreds of millions more only have access to very limited or unreliable electricity. It is estimated that only 28 percent of health facilities have access to reliable electricity in sub-Saharan Africa, yet energy is critically needed to keep people connected at home and to run life-saving equipment in hospitals. 
+    
+    If hospitals and local communities don’t have access to power, this could magnify the human catastrophe and significantly slow the global recovery.
+    
+    The Special Representative of the UN Secretary-General for Sustainable Energy for All explained why energy access matters during the coronavirus emergency and outlined three ways to respond to the COVID-19 emergency:
+    
+        1. Prioritize energy solutions to power health clinics and first responders;
+        2. Keep vulnerable consumers connected;
+        3. Increase reliable, uninterrupted, and sufficient energy production in preparation for a more sustainable economic recovery.
+    </p>
 </div>
-
-
-

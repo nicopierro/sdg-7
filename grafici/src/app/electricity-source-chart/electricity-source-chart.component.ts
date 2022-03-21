@@ -56,7 +56,7 @@ export class ElectricitySourceChartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.obsVett = this.http.get<ElectricitySource[]>(`https://5000-nicopierro-sdg7-whawyhtblhx.ws-eu34.gitpod.io/SharedElectricitySource`);
+    this.obsVett = this.http.get<ElectricitySource[]>(`https://5000-nicopierro-sdg7-zy3z1fnajt7.ws-eu38.gitpod.io/SharedElectricitySource`);
     this.obsVett.subscribe(this.prepareVectData);
 
   }
